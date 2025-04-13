@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>deklarace proměnných</h1>
+    
+    <table border="1">
+        <tr>
+            <th>
+                var
+            </th>
+            <td>
+                proměnná staršího typu
+            </td>
+        </tr>
+        <tr>
+            <th>
+                let
+            </th>
+            <td>
+                proměnná novějšího typu. Užívá se pro novější browsery <br>
+                <strong>Poznámka:</strong> roměnná deklarovaná pomocí let je viditlná pouze v rámci bloku, ve kterém byla deklarována. <br>
+                = lokální proměnná <br>
+                nahrazuje <strong>var</strong>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                const
+            </th>
+            <td>
+                globální proměnná <br>
+                nelze ji měnit <br>
+                nelze ji přiřadit novou hodnotu
+            </td>
+        </tr>
+    </table>
+
+    <h1>Typy proměnných</h1>
+    <table border="1">
+        <tr>
+            <th>datový typ</th>
+            <th>zápis</th>
+            <th>popis</th>
+            <th>ukázka</th>
+        </tr>
+        <tr>
+            <td>integer</td>
+            <td>
+                let cele_cislo = 1;
+            </td>
+            <td>celé číslo</td>
+            <td id="cele_cislo"></td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>
+                let text = "ahoj světe";
+            </td>
+            <td>textový řetězec</td>
+            <td id="text"></td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>
+                let desetinne_cislo = 1.5;
+            </td>
+            <td>desetinné číslo</td>
+            <td id="desetinny"></td>
+        </tr>
+        <tr>
+            <td>boolean</td>
+            <td>
+                let pravdivost = true;
+            </td>
+            <td>pravdivost - true/false</td>
+            <td id="pravdivost"></td>
+        </tr>
+        <tr>
+            <td>array</td>
+            <td>
+                const pole = new Array();
+                pole [0] = "Ahoj";
+                pole[1] = "ne";
+            </td>
+            <td>pole</td>
+            <td id="pole"></td>
+        </tr>
+        <tr>
+            <td>object</td>
+            <td>
+                const object = new Object();
+            </td>
+            <td>objekt</td>
+            <td id="objekt"></td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>
+                const datum = new Date();
+            </td>
+            <td>datum</td>
+            <td id="datum"></td>
+        </tr>
+    </table>
+    
+    
+    <script>
+        //deklARACE PROMENMNE
+
+        //Int promenna = hodnota
+    
+        let promenna = "hodnota";
+
+        let cele_cislo = 1;
+        document.getElementById("cele_cislo").innerHTML = cele_cislo;
+
+        let text = "ahoj světe"
+        document.getElementById("text").innerHTML = text;
+
+        let desetinny = 1.5;
+        document.getElementById("desetinny").innerHTML = desetinny;
+
+        let pravdivost = true;
+        document.getElementById("pravdivost").innerHTML = pravdivost;
+
+        const pole = new Array();
+            pole [0] = "Ahoj";
+            pole[1] = "ne";
+
+        document.getElementById("pole").innerHTML = pole;
+
+        const objekt = new Object();
+        document.getElementById("objekt").innerHTML = objekt;
+
+        const datum = new Date();
+        document.getElementById("datum").innerHTML = datum;
+
+    </script>
+</body>
+</html>
