@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel Elegance</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Vlastní CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!------------------------------------NAVBAR-------------------------------------->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./img/logo-oposite.svg"
+            alt="Hotel Elegance logo"
+            height="110"
+            id="logo2"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Přepnout navigaci"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Domů</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rooms">Pokoje</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hotel-services">Hotelový servis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Recenze</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">Časté dotazy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rezervace">Rezervace</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!---------------------------------Úvodní sekce----------------------------------->
+    <section id="hero">
+      <div class="hero-wrapper">
+        <div class="hero-content">
+          <p>Vítejte v našem moderním a pohodlném hotelu v srdci přírody.</p>
+          <a href="#rooms" class="btn-primary">Prohlédnout pokoje!</a>
+        </div>
+
+        <div class="hero-images">
+          <img
+            src="https://www.hotelsen.cz/wp-content/uploads/2019/08/sen_zima2024_34-scaled.jpg"
+            alt="fotka 1"
+            class="clickable-image active"
+            data-bg="https://www.hotelsen.cz/wp-content/uploads/2019/08/sen_zima2024_34-scaled.jpg"
+          />
+          <img
+            src="https://www.hotelsen.cz/wp-content/uploads/2022/09/02_infinit-sen-lq-10.jpg"
+            alt="fotka 2"
+            class="clickable-image"
+            data-bg="https://www.hotelsen.cz/wp-content/uploads/2022/09/02_infinit-sen-lq-10.jpg"
+          />
+          <img
+            src="https://www.hotelsen.cz/wp-content/uploads/2020/07/hotel_sen_pokoje002-scaled.jpg"
+            alt="fotka 3"
+            class="clickable-image"
+            data-bg="https://www.hotelsen.cz/wp-content/uploads/2020/07/hotel_sen_pokoje002-scaled.jpg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------------------rezervace--------------------------------->
+
+    <!-- FONT AWESOME pro ikonky -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <section id="rezervace1" class="rezervace-box">
+      <form
+        id="rezervacniForm"
+        method="post"
+        action="/rezervace"
+        class="form-row"
+      >
+        <!-- Příjezd -->
+        <div class="rezervace-blok">
+          <label for="arrivalDate"
+            ><i class="fa-solid fa-calendar-days"></i> Příjezd</label
+          >
+          <input type="date" id="arrivalDate" name="arrivalDate" required />
+        </div>
+
+        <!-- Odjezd -->
+        <div class="rezervace-blok">
+          <label for="departureDate"
+            ><i class="fa-solid fa-calendar-check"></i> Odjezd</label
+          >
+          <input type="date" id="departureDate" name="departureDate" required />
+        </div>
+
+        <!-- Počet hostů -->
+        <div class="rezervace-blok">
+          <label for="guestCount"
+            ><i class="fa-solid fa-user-group"></i> Počet osob</label
+          >
+          <select id="guestCount" name="guestCount" required>
+            <option value="1">1 osoba</option>
+            <option value="2" selected>2 osoby</option>
+            <option value="3">3 osoby</option>
+            <option value="4">4 osoby</option>
+            <option value="5">5 osob</option>
+            <option value="6">6 osob</option>
+          </select>
+        </div>
+
+        <!-- Tlačítko -->
+        <div class="rezervace-blok rezervace-btn-blok">
+          <a href="#rezervace" class="rezervace-btn-link">
+            <button type="button" class="rezervace-btn">Rezervace</button>
+          </a>
+        </div>
+      </form>
+    </section>
+
+    <!-------------------------------------Sekce pokoje--------------------------------->
+    <section id="rooms" class="py-5">
+      <h1 style="font-weight: 400">Nabídka pokojů</h1>
+      <p
+        style="
+          font-weight: 400;
+          text-align: center;
+          margin-left: 100px;
+          margin-right: 100px;
+        "
+      >
+        Vyberte si z naší nabídky nově zrekonstruovaných pokojů, které kombinují
+        komfort, moderní design a prvotřídní vybavení. Každý pokoj je pečlivě
+        připraven tak, aby vyhovoval vašim potřebám – ať už hledáte útulný
+        standard, prostorný deluxe nebo luxusní apartmá. Prohlédněte si naši
+        nabídku a najděte ten pravý pokoj právě pro vás. Těšíme se na vaši
+        návštěvu!
+      </p>
+      <br />
+      <div class="container d-flex justify-content-center">
+        <div id="roomsCarousel">
+          <!-- Standardní pokoj -->
+          <div class="room-card text-center">
+            <img
+              src="img/standard_pokoj.jpg"
+              alt="Standardní pokoj"
+              class="img-fluid rounded mb-2"
+              loading="lazy"
+            />
+            <h3>Standardní pokoj</h3>
+            <p>
+              Základní ubytování s jednou nebo dvěma postelemi, koupelnou,
+              televizí a Wi-Fi. Ideální pro krátkodobé pobyty.
+            </p>
+            <ul class="room-features list-inline">
+              <li class="list-inline-item">
+                <i class="fas fa-bed"></i> 1x manželská postel
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-wifi"></i> Wi-Fi
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-bath"></i> Koupelna
+              </li>
+              <li class="list-inline-item"><i class="fas fa-tv"></i> TV</li>
+            </ul>
+            <p><strong>od 1 500 Kč / noc</strong></p>
+            <a href="#rezervace" class="btn">Rezervovat</a>
+          </div>
+
+          <!-- Superior pokoj -->
+          <div class="room-card text-center">
+            <img
+              src="img/superior_pokoj.jpg"
+              alt="Pokoj Superior"
+              class="img-fluid rounded mb-2"
+              loading="lazy"
+            />
+            <h3>Pokoj Superior</h3>
+            <p>
+              Vylepšená verze standardního pokoje s větším prostorem, lepším
+              výhledem a kvalitnějším zařízením.
+            </p>
+            <ul class="room-features list-inline">
+              <li class="list-inline-item">
+                <i class="fas fa-bed"></i> 1x manželská postel
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-wifi"></i> Wi-Fi
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-bath"></i> Koupelna
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-tv"></i> Smart TV
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-eye"></i> Výhled
+              </li>
+            </ul>
+            <p><strong>od 1 800 Kč / noc</strong></p>
+            <a href="#rezervace" class="btn">Rezervovat</a>
+          </div>
+
+          <!-- Deluxe pokoj -->
+          <div class="room-card text-center">
+            <img
+              src="img/deluxe_pokoj.jpg"
+              alt="Pokoj Deluxe"
+              class="img-fluid rounded mb-2"
+              loading="lazy"
+            />
+            <h3>Pokoj Deluxe</h3>
+            <p>
+              Nabízí více prostoru, luxusnější vybavení, často s balkonem nebo
+              výhledem.
+            </p>
+            <ul class="room-features list-inline">
+              <li class="list-inline-item">
+                <i class="fas fa-bed"></i> 1x manželská postel
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-wifi"></i> Wi-Fi
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-bath"></i> Koupelna
+              </li>
+              <li class="list-inline-item"><i class="fas fa-tv"></i> TV</li>
+              <li class="list-inline-item">
+                <i class="fas fa-balcony"></i> Balkon
+              </li>
+            </ul>
+            <p>
+              <del class="text-muted">2 200 Kč / noc</del>
+              <span class="fw-bold text-danger ms-2">1 799 Kč / noc</span>
+            </p>
+            <a href="#rezervace" class="btn">Rezervovat</a>
+          </div>
+
+          <!-- Rodinný pokoj -->
+          <div class="room-card text-center">
+            <img
+              src="img/rodinny_pokoj.jpg"
+              alt="Rodinný pokoj"
+              class="img-fluid rounded mb-2"
+              loading="lazy"
+            />
+            <h3>Rodinný pokoj</h3>
+            <p>
+              Navržen pro rodiny, nabízí více lůžek nebo propojené pokoje, často
+              s dětskými prvky.
+            </p>
+            <ul class="room-features list-inline">
+              <li class="list-inline-item">
+                <i class="fas fa-bed"></i> 2x jednolůžko + 1x manželská
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-wifi"></i> Wi-Fi
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-bath"></i> Koupelna
+              </li>
+              <li class="list-inline-item"><i class="fas fa-tv"></i> TV</li>
+              <li class="list-inline-item">
+                <i class="fas fa-child"></i> Dětská postýlka
+              </li>
+            </ul>
+            <p><strong>od 2 500 Kč / noc</strong></p>
+            <a href="#rezervace" class="btn">Rezervovat</a>
+          </div>
+
+          <!-- Junior Suite -->
+          <div class="room-card text-center">
+            <img
+              src="img/junior_suite.jpeg"
+              alt="Junior Suite"
+              class="img-fluid rounded mb-2"
+              loading="lazy"
+            />
+            <h3>Junior Suite</h3>
+            <p>
+              Kombinuje ložnici a obývací prostor v otevřeném uspořádání,
+              poskytuje více prostoru než standardní pokoj.
+            </p>
+            <ul class="room-features list-inline">
+              <li class="list-inline-item">
+                <i class="fas fa-bed"></i> 1x manželská postel
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-couch"></i> Obývací část
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-wifi"></i> Wi-Fi
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-tv"></i> Smart TV
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-bath"></i> Koupelna
+              </li>
+            </ul>
+            <p><strong>od 3 200 Kč / noc</strong></p>
+            <a href="#rezervace" class="btn">Rezervovat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------------ZLEVNĚNÉ UBYTOVÁNÍ---------------------------->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-start justify-content-center gx-5">
+          <!-- Levá část: Výhodné ubytování -->
+          <div class="col-12 col-md-6 col-lg-5">
+            <h2
+              class="text-center mb-4"
+              style="font-weight: 400; color: #d50000"
+            >
+              Výhodné ubytování pouze nyní!
+            </h2>
+            <div class="card shadow-lg">
+              <img
+                src="img/deluxe_pokoj.jpg"
+                class="card-img-top"
+                alt="Pokoj Deluxe"
+              />
+              <div class="card-body text-center">
+                <h3>Pokoj Deluxe</h3>
+                <p>
+                  Nabízí více prostoru, luxusnější vybavení, často s balkonem
+                  nebo výhledem.
+                </p>
+                <ul class="room-features list-inline">
+                  <li class="list-inline-item">
+                    <i class="fas fa-bed"></i> 1x manželská postel
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fas fa-wifi"></i> Wi-Fi
+                  </li>
+                  <li class="list-inline-item">
+                    <i class="fas fa-bath"></i> Koupelna
+                  </li>
+                  <li class="list-inline-item"><i class="fas fa-tv"></i> TV</li>
+                  <li class="list-inline-item">
+                    <i class="fas fa-balcony"></i> Balkon
+                  </li>
+                </ul>
+                <p>
+                  <del class="text-muted">2 200 Kč / noc</del>
+                  <span class="fw-bold text-danger ms-2">1 799 Kč / noc</span>
+                </p>
+                <!-- ODPOČET -->
+                <div
+                  id="countdown"
+                  class="text-center mb-3"
+                  style="font-size: 1.4rem; font-weight: bold; color: #d50000"
+                >
+                  Nabídka platí ještě: načítám...
+                </div>
+                <a
+                  href="#rezervace"
+                  class="btn btn-danger mt-2 text-white"
+                  style="background-color: #d50000; border: none"
+                >
+                  Rezervovat
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pravá část: Text a fotky -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <h2 class="text-center mb-4" style="font-weight: 400">
+              O našem hotelu
+            </h2>
+            <p>
+              Hotel se nachází v Senohrabech, 20 minut od Prahy. Nabízí
+              komfortní a moderní ubytování s výbornou dostupností do centra
+              města. K dispozici je wellness a další služby, které zajišťují
+              vysokou kvalitu pobytu. Každý pokoj je vybaven tak, aby poskytoval
+              maximální pohodlí a relaxaci. Hosté mohou očekávat přátelskou
+              atmosféru a profesionální přístup personálu.
+            </p>
+            <div class="d-flex gap-3 flex-wrap justify-content-center">
+              <img
+                src="img/hotel.jpg"
+                alt="Hotel foto 1"
+                class="img-fluid rounded"
+                style="width: 48%; height: auto"
+              />
+              <img
+                src="img/sauna.jpg"
+                alt="Hotel foto 2"
+                class="img-fluid rounded"
+                style="width: 48%; height: auto"
+              />
+              <img
+                src="img/welness.jpg"
+                alt="Hotel foto 3"
+                class="img-fluid rounded"
+                style="width: 48%; height: auto"
+              />
+              <img
+                src="img/pokoj.jpg"
+                alt="Hotel foto 4"
+                class="img-fluid rounded"
+                style="width: 48%; height: auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/odpocet.js"></script>
+
+    <!-----------------------hotelovy servis------------------------------------->
+    <section id="hotel-services">
+      <div class="section-header">
+        <span class="decor-line"></span>
+        <h1>Hotelový servis</h1>
+      </div>
+      <div class="services-container">
+        <div class="service" onclick="openModal('wellness')">
+          <div class="icon">💆‍♀️</div>
+          <h3>Wellness</h3>
+          <p>Relaxační procedury a masáže pro dokonalý odpočinek.</p>
+        </div>
+        <div class="service" onclick="openModal('kurty')">
+          <div class="icon">🎾</div>
+          <h3>Kurty</h3>
+          <p>Tenisové a badmintonové kurty pro naše hosty.</p>
+        </div>
+        <div class="service" onclick="openModal('restaurace')">
+          <div class="icon">🍽️</div>
+          <h3>Restaurace</h3>
+          <p>Široký výběr jídel připravených našimi šéfkuchaři.</p>
+        </div>
+        <div class="service" onclick="openModal('parkovani')">
+          <div class="icon">🚗</div>
+          <h3>Parkování</h3>
+          <p>Bezpečné a pohodlné parkování přímo u hotelu.</p>
+        </div>
+        <div class="service" onclick="openModal('bazen')">
+          <div class="icon">🏊‍♂️</div>
+          <h3>Bazén</h3>
+          <p>Venkovní bazén s vyhříváním pro relaxaci i sport.</p>
+        </div>
+        <div class="service" onclick="openModal('wifi')">
+          <div class="icon">📶</div>
+          <h3>Wi-Fi zdarma</h3>
+          <p>Rychlé a spolehlivé připojení k internetu po celém hotelu.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="" alt="Servis detail" />
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+
+    <!---------------------------------------------------------Recenze-------------------------->
+    <section id="reviews" style="position: relative" class="bg-light">
+      <div class="container flex-container">
+        <div class="reviews-left">
+          <h2>Hodnocení našich hostů</h2>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <h4>Jana Novotná</h4>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <p>
+                Úžasné ubytování! Pokoje byly čisté a útulné, personál ochotný a
+                milý. Wellness centrum jsem si zamilovala a snídaně byla
+                naprosto fantastická. Rozhodně doporučuji všem, kdo hledají
+                klidné a pohodlné ubytování.
+              </p>
+            </div>
+            <div class="review-card">
+              <h4>Petr Malý</h4>
+              <p class="stars">⭐⭐⭐⭐</p>
+              <p>
+                Velmi příjemné prostředí, výhled z pokoje na jezero byl
+                dechberoucí. Jediná drobná výtka byla k pomalejšímu Wi-Fi
+                připojení, jinak naprostá spokojenost.
+              </p>
+            </div>
+            <div class="review-card">
+              <h4>Klára Vondráčková</h4>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <p>
+                Naprosto úžasný zážitek! Vyzkoušeli jsme apartmán Deluxe a stálo
+                to za to. Večerní relax ve vířivce a snídaně na terase byly
+                nezapomenutelné. Doporučuji všem, co si chtějí opravdu
+                odpočinout.
+              </p>
+            </div>
+            <div class="review-card">
+              <h4>Tomáš Svoboda</h4>
+              <p class="stars">⭐⭐⭐</p>
+              <p>
+                Příjemné ubytování za rozumnou cenu. Trochu slabší výběr večeří,
+                ale snídaně a obsluha naprosto v pořádku. Ideální pro víkendový
+                pobyt.
+              </p>
+            </div>
+
+            <!-- Skryté recenze -->
+            <div class="review-card hidden">
+              <h4>Eva Němcová</h4>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <p>
+                Výborná lokalita, příjemný personál a perfektně vybavené pokoje.
+                Doporučuji i pro rodiny s dětmi – dětský koutek a animační
+                programy byly skvělé. Rádi se sem vrátíme.
+              </p>
+            </div>
+            <div class="review-card hidden">
+              <h4>David Procházka</h4>
+              <p class="stars">⭐⭐⭐⭐</p>
+              <p>
+                Pokoj byl krásně čistý, moderně vybavený a velmi pohodlný.
+                Překvapila mě kvalita wellness a skvělé masáže. Jediné mínus
+                byla menší hlučnost z vedlejší místnosti.
+              </p>
+            </div>
+            <div class="review-card hidden">
+              <h4>Lucie Hrdličková</h4>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <p>
+                Jeden z nejlepších hotelů, které jsem kdy navštívila. Výjimečně
+                ochotný personál, bohatá snídaně a krásný výhled z pokoje.
+                Doporučuji jak pro páry, tak pro rodiny.
+              </p>
+            </div>
+            <div class="review-card hidden">
+              <h4>Adam Černý</h4>
+              <p class="stars">⭐⭐⭐</p>
+              <p>
+                Hotel je fajn, ale ceny v hotelové restauraci by mohly být o
+                něco příznivější. Jinak nemám co vytknout. Pokoje čisté a
+                voňavé, personál usměvavý a ochotný.
+              </p>
+            </div>
+            <div class="review-card hidden">
+              <h4>Barbora Křížová</h4>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <p>
+                Naprosto skvělé místo na romantický víkend. Příjemné wellness s
+                vířivkou, saunou a nádherným výhledem. Večerní menu bylo luxusní
+                a personál velmi vstřícný. Určitě se rádi vrátíme.
+              </p>
+            </div>
+            <div class="review-card hidden">
+              <h4>Michal Soukup</h4>
+              <p class="stars">⭐⭐⭐⭐</p>
+              <p>
+                Hotel splnil očekávání. Velmi čisté a prostorné pokoje, dobrá
+                dostupnost a klidné prostředí. Ideální na pracovní cestu i
+                rodinnou dovolenou.
+              </p>
+            </div>
+          </div>
+
+          <button id="show-more-btn" class="btn btn-primary w-40">
+            Zobrazit více
+          </button>
+        </div>
+
+        <div class="reviews-sidebar">
+          <div class="reviews-summary">
+            <p>
+              <strong>Počet recenzí: </strong
+              ><span id="total-reviews-count"> 10</span>
+            </p>
+            <p>
+              <strong>Průměrné hodnocení:</strong
+              ><span id="average-stars">⭐⭐⭐⭐</span> (<span
+                id="average-rating"
+                >4.3</span
+              >)
+            </p>
+            <p>
+              <strong>Recenzí od uživatelů: </strong>
+              <span id="user-reviews-count">0</span>
+            </p>
+          </div>
+
+          <div class="add-review">
+            <h3>Přidat vlastní recenzi</h3>
+            <form id="review-form">
+              <label for="name">Jméno:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="rating">Hodnocení:</label>
+              <select id="rating" name="rating" required>
+                <option value="">Vyberte...</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+              </select>
+
+              <label for="comment">Recenze:</label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="10"
+                required
+              ></textarea>
+
+              <button
+                id="add-review-btn"
+                type="submit"
+                class="btn btn-primary mt-3 w-100"
+              >
+                ✍️ Přidat recenzi
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/recenze.js"></script>
+
+    <!------------------------------------------------------- FAQ------------------------------- -->
+    <section class="py-5" id="faq">
+      <div class="container">
+        <h1 class="mb-4 text-center">Časté dotazy</h1>
+        <div class="row">
+          <!-- Levá část -->
+          <div class="col-md-6">
+            <div class="accordion" id="faqAccordionLeft">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseOne"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseOne"
+                  >
+                    Jak mohu rezervovat pokoj a jaké jsou možnosti platby?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingOne"
+                  data-bs-parent="#faqAccordionLeft"
+                >
+                  <div class="accordion-body">
+                    Rezervaci můžete provést online přes náš rezervační systém,
+                    telefonicky nebo e-mailem. Platit lze kartou, bankovním
+                    převodem nebo hotově při příjezdu.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseThree"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseThree"
+                  >
+                    Je možné přijet se zvířetem a jaké jsou podmínky pro
+                    ubytování s domácími mazlíčky?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingThree"
+                  data-bs-parent="#faqAccordionLeft"
+                >
+                  <div class="accordion-body">
+                    Ano, přijímáme domácí mazlíčky po předchozí dohodě. Prosíme
+                    o dodržování pravidel ohledně chování a čistoty během
+                    pobytu.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseFive"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseFive"
+                  >
+                    Nabízíte nějaké aktivity a volnočasové možnosti v okolí
+                    ubytování?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingFive"
+                  data-bs-parent="#faqAccordionLeft"
+                >
+                  <div class="accordion-body">
+                    Ano, v okolí jsou turistické trasy, cyklostezky, wellness
+                    centra a další zajímavosti. Rádi Vám doporučíme nejlepší
+                    tipy na výlety a aktivity.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pravá část -->
+          <div class="col-md-6">
+            <div class="accordion" id="faqAccordionRight">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseTwo"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseTwo"
+                  >
+                    Jaké jsou storno podmínky a co dělat při změně plánu?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingTwo"
+                  data-bs-parent="#faqAccordionRight"
+                >
+                  <div class="accordion-body">
+                    Storno rezervace je možné bez poplatku do 48 hodin před
+                    příjezdem. Při změně plánu nás prosím kontaktujte co
+                    nejdříve, rádi vám pomůžeme s úpravou rezervace.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseFour"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseFour"
+                  >
+                    Jak probíhá check-in a check-out a co když přijedu mimo
+                    obvyklé hodiny?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingFour"
+                  data-bs-parent="#faqAccordionRight"
+                >
+                  <div class="accordion-body">
+                    Check-in je od 14:00 do 22:00, check-out do 11:00. Pokud
+                    přijedete mimo tyto hodiny, prosím informujte nás předem,
+                    domluvíme individuální řešení.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseSix"
+                    aria-expanded="false"
+                    aria-controls="faqCollapseSix"
+                  >
+                    Jak je to s parkováním a dostupností veřejné dopravy?
+                  </button>
+                </h2>
+                <div
+                  id="faqCollapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="faqHeadingSix"
+                  data-bs-parent="#faqAccordionRight"
+                >
+                  <div class="accordion-body">
+                    K dispozici je bezplatné parkování přímo u hotelu. Veřejná
+                    doprava je snadno dostupná, zastávka autobusu a tramvaje je
+                    cca 5 minut pěšky od hotelu.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------------------------formular na rezervaci-------------->
+    <section id="rezervace" class="rezervace-section">
+      <div class="container">
+        <h2>Rezervace</h2>
+        <form
+          class="rezervacni-form"
+          oninput="vypocitejNociACenu()"
+        >
+          <div class="form-group">
+            <label for="jmeno">Jméno a příjmení</label>
+            <input type="text" name="jmeno" id="jmeno" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefon</label>
+            <input type="tel" name="telefon" id="telefon" required />
+          </div>
+          <div class="form-group">
+            <label for="prijezd">Datum příjezdu</label>
+            <input type="date" name="prijezd" id="prijezd" required />
+          </div>
+          <div class="form-group">
+            <label for="odjezd">Datum odjezdu</label>
+            <input type="date" name="odjezd" id="odjezd" required />
+          </div>
+          <div class="form-group">
+            <label for="pokoj">Typ pokoje</label>
+            <select name="pokoj" id="pokoj" required>
+              <option value="standard">Standard - 1500 Kč/noc</option>
+              <option value="superior">Superior - 1800 Kč/noc</option>
+              <option value="deluxe">Deluxe - 1799 Kč/noc</option>
+              <option value="rodinny">Rodinný - 2500 Kč/noc</option>
+              <option value="suite">Suite - 3200 Kč/noc</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pocet">Počet osob</label>
+            <input type="number" name="pocet" id="pocet" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="zprava">Zpráva (nepovinné)</label>
+            <textarea name="zprava" id="zprava" rows="4"></textarea>
+          </div>
+
+          <div id="vypocet-vysledek" class="vypocet-vysledek"></div>
+          <input type="hidden" name="pocet_noci" id="pocet_noci" />
+          <input type="hidden" name="cena_celkem" id="cena_celkem" />
+
+          <button type="submit" class="btn-submit">Odeslat rezervaci</button>
+          <div
+            id="potvrzeni"
+            style="margin-top: 20px; color: green; font-weight: bold"
+          ></div>
+        </form>
+      </div>
+    </section>
+    <script src="js/rezervace.js"></script>
+
+    <!-----------------------------footer----------------------------------------->
+
+    <footer
+      class="text-white pt-4"
+      style="background-color: #9b877f"
+      id="footer"
+    >
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <!-- Navigace -->
+          <div class="col-12 col-md-4">
+            <h3>Navigace</h3>
+            <ul class="list-unstyled">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Domů</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#rooms">Pokoje</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#hotel-services">Hotelový servis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reviews">Recenze</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">Časté dotazy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#rezervace">Rezervace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kontakt + Mapka -->
+          <div class="col-12 col-md-4">
+            <h3>Kontakt</h3>
+            <p class="mb-1">Hotelová adresa 123, 110 00 Praha</p>
+            <p class="mb-1">
+              Email:
+              <a
+                href="mailto:info@hotel.cz"
+                class="text-white text-decoration-none"
+                >info@hotel.cz</a
+              >
+            </p>
+            <p class="mb-3">
+              Telefon:
+              <a
+                href="tel:+420123456789"
+                class="text-white text-decoration-none"
+                >+420 123 456 789</a
+              >
+            </p>
+
+            <div
+              class="rounded overflow-hidden shadow-sm"
+              style="height: 160px"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d906.3593194310137!2d14.714162959253514!3d49.897401576305036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c7807c55f5f65%3A0x487b015916ec46a0!2sHotel%20Sen!5e1!3m2!1scs!2sus!4v1749389080483!5m2!1scs!2sus"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Sociální sítě -->
+          <div class="col-12 col-md-3">
+            <h3>Sledujte nás</h3>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white fs-4"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center mt-4 border-top pt-3" style="font-size: 0.9rem">
+          © 2025 Hotel Elegance. Všechna práva vyhrazena.
+        </div>
+        <div style="padding-bottom: 20px"></div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Chatbot bublina -->
+    <div id="chatbot-widget">
+      <button id="chatbot-toggle">💬</button>
+      <div id="chatbot-box" class="hidden">
+        <div id="chatbot-header">Potřebujete poradit?</div>
+        <div id="chatbot-options">
+          <button class="chat-option">🛏 Ubytování</button>
+          <button class="chat-option">💆 Wellness</button>
+          <button class="chat-option">🕒 Check-in / Check-out</button>
+          <button class="chat-option">📍 Lokalita a doprava</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form">
+          <input
+            type="text"
+            id="chatbot-input"
+            placeholder="Napište dotaz..."
+            required
+          />
+          <button type="submit">Odeslat</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

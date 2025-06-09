@@ -1,0 +1,1120 @@
+@font-face {
+  font-family: 'MujFont';
+  src: url('../font/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'MujFont', sans-serif;
+  background-color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+  
+/*--------------------------Navigace---------------------*/
+.navbar {
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.navbar-nav {
+  gap: 30px;
+}
+
+
+.navbar.scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(255, 254, 254, 0.1);
+}
+
+/* Navbar brand default (velký bílý text) */
+.navbar .navbar-brand {
+  font-size: 2rem;
+  color: #fff !important;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* Navbar brand po scrollu (menší černý text) */
+.navbar.scrolled .navbar-brand {
+  font-size: 1.4rem;
+  color: #333 !important;
+  font-weight: 600;
+}
+
+/* Odkazy v navigaci default (bílé) */
+.navbar .nav-link {
+  color: #fff !important;
+  transition: color 0.3s;
+}
+
+/* Odkazy po scrollu (černé) */
+.navbar.scrolled .nav-link {
+  color: #333 !important;
+}
+
+/* Hover efekt na odkazy */
+.navbar .nav-link:hover {
+  color: #c0c0c0 !important;
+}
+
+.navbar-brand img {
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1); /* zbělí ikonku */
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white; /*  pozadí menu */
+    padding: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    color: black !important; /*  odkazy v rozbaleném menu */
+  }
+}
+
+.navbar-toggler {
+  border: 2px solid black; /* černý rámeček */
+  padding: 6px 10px; /* můžeš si přizpůsobit velikost */
+  border-radius: 4px; /* volitelné: zakulacení rohů */
+  background-color: transparent; /* bez pozadí */
+}
+
+
+/*---------------------------sekce----------------------*/
+section {
+  padding: 70px 0;
+}
+  
+/*--------------------Hero sekce s pozadím---------------*/
+#hero {
+  background-image: url('https://www.hotelsen.cz/wp-content/uploads/2019/08/sen_zima2024_34-scaled.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 70px;
+  padding: 0 20px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 30px 0;
+  font-weight: 300;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #333;
+  border-color: white;
+}
+
+.hero-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100px;
+}
+
+.hero-images img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.hero-images img.active {
+  filter: none;
+  border-color: white;
+}
+
+@media (min-width: 992px) {
+  .hero-images {
+    margin-left: auto; /* posune celou sadu obrázků co nejvíce doprava */
+    padding-right: 20px; /* volitelně můžeš přidat i prostor od kraje */
+  }
+}
+
+/* TABLETY */
+@media (max-width: 992px) {
+  .hero-wrapper {
+    gap: 40px;
+    padding: 0 15px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+
+  .hero-images {
+    width: auto;
+  }
+
+  .hero-images img {
+    width: 70px;
+  }
+}
+
+/* MOBILY */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-images {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-images img {
+    width: 60px;
+    margin-bottom: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/*--------------------------------------rezervace---------------------*/
+.rezervace-box {
+  background-color: #9b877f;
+  color: white;
+  padding: 30px;
+  max-width: 1100px;
+  margin: -60px auto 0 auto;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  font-family: 'Arial', sans-serif;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rezervace-blok {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+}
+
+.rezervace-blok label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rezervace-blok input,
+.rezervace-blok select {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.rezervace-btn:hover {
+  background: linear-gradient(to right, #c3973c, #dac17a);
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* důležité pro zarovnání výšky */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rezervace-blok {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+}
+
+.rezervace-blok:last-child { /* blok s tlačítkem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.rezervace-btn-blok {
+  display: flex;
+}
+
+.rezervace-btn {
+  height: 48px; /* nastavíme stejnou výšku jako inputy */
+  padding: 0 28px;
+  background: linear-gradient(to right, #c5ab74, #eecf8d);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-top: 30px;
+  font-weight:500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.rezervace-btn-link {
+  text-decoration: none;
+}
+
+
+/*----------------------------pokoje-----------------------*/
+/* Sekce pokoje */
+#rooms {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+/* Nadpis */
+#rooms h1 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+  font-size: 2.5rem;
+}
+
+/* Kontejner carouselu*/
+#rooms .container {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Carousel wrapper - flex řada pro scroll */
+#roomsCarousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* pro plynulé scrollování na iOS */
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+/* Styl scrollbaru pro Chrome, Edge, Safari */
+#roomsCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+#roomsCarousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#roomsCarousel::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+/* Karta pokoje */
+.room-card {
+  flex: 0 0 30%;  /* cca 3 vedle sebe v kontejneru 90% šířky */
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  min-width: 280px; /* zaručí minimální šířku i na menších obrazovkách */
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Obrázek */
+.room-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Nadpis */
+.room-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Popis a cena */
+.room-card p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.room-card p strong {
+  font-weight: 700;
+  color: black;
+}
+
+/* Tlačítko */
+.room-card .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #9b877f;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.room-card .btn:hover {
+  background-color: #9b877f;
+}
+
+.room-features {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.room-features li {
+  margin: 5px 10px;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.room-features i {
+  margin-right: 6px;
+  color: #9b877f;
+}
+
+
+/* Responsive - na menších zařízeních ukázat 1-2 pokoje vedle sebe */
+@media (max-width: 900px) {
+  #roomsCarousel {
+    gap: 15px;
+  }
+  .room-card {
+    flex: 0 0 45%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #roomsCarousel {
+    gap: 10px;
+  }
+  .room-card {
+    flex: 0 0 90%;
+  }
+}
+/*-----------------------------zlevnene ubytovani----------------------------*/
+
+
+
+/*------------------------hotelový servis---------------------*/
+
+#hotel-services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-header .decor-line {
+  width: 42px;
+  height: 3px;
+  background-color:#9b877f;
+  margin-right: 15px;
+  border-radius: 2px;
+}
+
+.section-header h1 {
+  color: black;
+  margin: 0;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.service {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.service h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Mobilní zařízení */
+@media (max-width: 600px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Modalní okno */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.modal-content p {
+  color: black;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/*-------------------------------------------------recenze-----------------------*/
+
+/* Recenze sekce */
+#reviews {
+  background-color: white;
+  margin-top: 0;
+  padding: 40px 20px;
+  color: black
+}
+
+#reviews h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 40px;
+}
+
+.review-item {
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  font-size: 1.1rem;
+  color: #FFD700;
+}
+
+.toggle-btn {
+  background-color:  #9b877f;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color:  #9b877f;
+}
+
+.review-text {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+#reviews .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#reviews h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+  color: #222;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.review-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+}
+
+.review-card h4 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.stars {
+  color:  #9b877f; /* zlatá barva pro hvězdičky */
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  user-select: none;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color:  black;
+  margin: 0;
+}
+
+/* Skryté recenze */
+.review-card.hidden {
+  display: none;
+}
+.hidden{
+  display: none;
+}
+
+/* Tlačítko zobrazit další recenze */
+#show-more-btn {
+  display: block;
+  margin: 35px auto 0 auto;
+  background-color:  #9b877f;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#show-more-btn:hover {
+  background-color:  #af9b92;
+}
+
+#add-review-btn {
+  background-color: transparent !important;
+  color: black !important;
+  border: 2px solid #9b877f !important;
+}
+#add-review-btn:hover {
+  background-color: #9b877f !important;
+  color: white !important;
+  border-color: #9b877f !important;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  #reviews h2 {
+    font-size: 1.8rem;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ /* Skryj sidebar na menších zařízeních */
+/* Flex container pro LG a větší */
+  @media (min-width: 1024px) {
+    .flex-container {
+      display: flex;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .reviews-left {
+      flex: 2;
+    }
+
+    .reviews-sidebar {
+      flex: 1;
+      border-left: 2px solid  #9b877f;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
+    .reviews-summary p {
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
+    }
+
+    .add-review h3 {
+      margin-bottom: 1rem;
+    }
+
+    #review-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #review-form label {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    #review-form input,
+    #review-form select,
+    #review-form textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    #review-form textarea {
+      height: 100%;
+      min-height: 300px;
+      max-height: 100%;
+    }
+
+    /* Aby textarea vyplnila co nejvíc výšky */
+    .add-review {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #review-form {
+      flex-grow: 1;
+    }
+  }
+
+
+
+  /* Menší zařízení: ukrýt sidebar a dát form pod sekci recenzí */
+  @media (max-width: 1023px) {
+    .reviews-sidebar {
+      display: none;
+    }
+
+    /* Přidáme vlastní recenzi pod recenze */
+    #reviews + .add-review-mobile {
+      display: block;
+      margin-top: 2rem;
+    }
+  }
+  
+/*--------------------------------------------------faq-----------------------------*/
+
+/* Barva pozadí a textu aktivního rozbaleného tlačítka */
+.accordion-button:not(.collapsed) {
+  background-color: #9b877f; 
+  color: white; 
+  border: 2px solid #9b877f;
+}
+
+/* Když chceš i změnit šipku na konci */
+.accordion-button:not(.collapsed)::after {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(102%) contrast(102%);
+  
+}
+
+
+
+/*--------------------------------------------formular na rezervaci------------*/
+
+.rezervace-section {
+  padding: 60px 20px;
+  background: #f7f7f7;
+  color: black;
+}
+.rezervace-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.rezervacni-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn-submit {
+  background: #9b877f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background:#bba59c;
+}
+.vypocet-vysledek {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: -10px;
+  color: #555;
+}
+
+
+/*--------------------------------------------------footer-------------------------*/
+
+.list-unstyled .nav-item{
+  padding-top: 8px;
+}
+  
+
+
+/* --------------------------Media queries pro responzivitu ----------------------- */
+
+/*-----------------------------HERO-----------------------------*/
+
+/* Extra small devices (mobilní telefony, <576px) */
+@media (max-width: 575.98px) {
+  .hero-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .hero-content .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small devices (≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Extra large devices (≥1200px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .hero-content {
+    max-width: 750px;
+  }
+}
+
+/* XXL devices (≥1400px) */
+@media (min-width: 1400px) {
+  .hero-content {
+    max-width: 800px;
+  }
+}
+
+/*-----------------------------POKOJE-------------------------*/
+
+/* Na mobilu (do 768px) zobrazí jen 1 pokoj, aby to nebylo stlačené */
+@media (max-width: 768px) {
+  .carousel-item .d-flex > div {
+    min-width: 90vw !important;
+    margin: 0 auto;
+  }
+}
+
+
+#chatbot-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: sans-serif;
+  z-index: 9999;
+}
+#chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #9b877f;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+#chatbot-box {
+  width: 320px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+#chatbot-box.hidden {
+  display: none;
+}
+#chatbot-header {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+#chatbot-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.chat-option {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#chatbot-messages {
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.message {
+  margin: 4px 0;
+}
+.user { text-align: right; color: #333; }
+.bot { text-align: left; color: #000000; }
+#chatbot-form {
+  display: flex;
+  gap: 6px;
+}
+#chatbot-input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+#chatbot-form button {
+  padding: 6px 10px;
+  background: #9b877f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
